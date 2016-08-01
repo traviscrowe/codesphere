@@ -5,8 +5,13 @@ import time
 
 
 def main():
+    _forward = 359
+    _backward = 179
+    _left = 179
+    _right = 89
+
     with open('mysphero.txt') as file_:
-       addr = file_.readline().strip()
+        addr = file_.readline().strip()
 
     with Codesphere(addr) as codesphere:
         codesphere.set_inactivity_timeout(3600)

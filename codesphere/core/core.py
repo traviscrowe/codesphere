@@ -31,7 +31,13 @@ class Codesphere(object):
 
     def roll(self, heading, wait):
         self._kulka.roll(100, heading, 1)
-        time.sleep(wait)
+        time.sleep(wait * 1000)
+        return
+
+
+    def roll_for_a_second(self, heading):
+        self._kulka.roll(100, heading, 1)
+        time.sleep(1000)
         return
 
 
