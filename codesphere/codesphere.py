@@ -5,30 +5,26 @@ import time
 
 
 def main():
-    _forward = 359
-    _backward = 179
-    _left = 179
-    _right = 89
+    _forward = 360
+    _backward = 180
+    _left = 270
+    _right = 90
 
     with open('mysphero.txt') as file_:
         addr = file_.readline().strip()
 
     with Codesphere(addr) as codesphere:
         codesphere.set_inactivity_timeout(3600)
-        codesphere.chanage_tail_color(100)
+        codesphere.change_tail_brightness(100)
 
-        # blink for a few seconds
-        for _ in range(10):
-            codesphere.change_ball_color(0xFF, 0, 0)
-            time.sleep(0.1)
-            codesphere.change_ball_color(0, 0, 0)
-            time.sleep(0.1)
-
+        #   YOUR CODE HERE  #
         # roll in a random direction every 3 seconds 10 times
-        for _ in range(10):
-            codesphere.roll(randint(0, 359), 3)
+        #for _ in range(10):
+            #codesphere.roll(randint(1, 360), 1)
 
-        codesphere.chanage_tail_color(10)
+        codesphere.roll_for_one_second(360)
+        codesphere.roll_for_one_second(180)
+
         codesphere.sleep()
 
 if __name__ == '__main__':
