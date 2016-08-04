@@ -35,17 +35,24 @@ class Codesphere(object):
         return self._kulka.set_back_led(bright)
 
 
+    def set_heading(self, heading):
+        return self._kulka.set_heading(heading)
+
     def roll(self, heading, wait):
-        self._kulka.roll(100, (heading - 1), 1)
+        self._kulka.roll(150, heading, 1)
         time.sleep(wait)
         return
 
 
     def roll_for_one_second(self, heading):
-        self._kulka.roll(100, (heading - 1), 1)
+        self._kulka.roll(150, heading, 1)
         time.sleep(2)
         return
 
+    def stop(self):
+        self._kulka.roll(0, 0, 1)
+        time.sleep(0.5)
+        return
 
     def sleep(self, wakeup=0, macro=0, orb_basic=0):
         return self._kulka.sleep(wakeup, macro, orb_basic)

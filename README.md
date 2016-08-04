@@ -4,8 +4,8 @@ codesphere is a kid-friendly programming API for the [Sphero 2.0](http://www.sph
 
     git clone https://github.com/traviscrowe/kulka
 
-    navigate to $PATH_TO_KULKA 
+    cd $PATH_TO_KULKA
     python setup.py install
 
-    navigate to $PATH_TO_CODESPHERE
+    cd $PATH_TO_CODESPHERE
     python codesphere/codesphere.py

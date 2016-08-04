@@ -5,27 +5,27 @@ import time
 
 
 def main():
-    _forward = 360
-    _backward = 180
-    _left = 270
-    _right = 90
-
     with open('mysphero.txt') as file_:
         addr = file_.readline().strip()
 
-    with Codesphere(addr) as codesphere:
-        codesphere.set_inactivity_timeout(3600)
-        codesphere.change_tail_brightness(100)
+    with Codesphere(addr) as sphero:
+        #   SETUP SPHERO
+        sphero.set_inactivity_timeout(3600)
+        sphero.change_tail_brightness(100)
 
-        #   YOUR CODE HERE  #
-        # roll in a random direction every 3 seconds 10 times
-        #for _ in range(10):
-            #codesphere.roll(randint(1, 360), 1)
+        #   CHANGE THE SPHERO'S COLOR
+        sphero.change_ball_color(255, 0, 125)
 
-        codesphere.roll_for_one_second(360)
-        codesphere.roll_for_one_second(180)
+        #   NAVIGATE THROUGH THE MAZE
+        sphero.roll(0, 3)
 
-        codesphere.sleep()
+
+
+
+
+
+        #   END
+        sphero.stop()
 
 if __name__ == '__main__':
     main()
