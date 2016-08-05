@@ -1,5 +1,6 @@
 from kulka import Kulka
 import time
+from random import randint
 
 
 class Codesphere(object):
@@ -9,9 +10,7 @@ class Codesphere(object):
         self._kulka = Kulka(address)
 
         for _ in range(5):
-            self.change_ball_color(0xFF, 0, 0)
-            time.sleep(0.1)
-            self.change_ball_color(0, 0, 0)
+            self.change_ball_color(randint(0, 255), randint(0, 255), randint(0, 255))
             time.sleep(0.1)
 
 
@@ -39,14 +38,14 @@ class Codesphere(object):
         return self._kulka.set_heading(heading)
 
     def roll(self, heading, wait):
-        self._kulka.roll(150, heading, 1)
-        time.sleep(wait)
+        self._kulka.roll(175, heading, 1)
+        time.sleep(wait + 0.5)
         return
 
 
     def roll_for_one_second(self, heading):
-        self._kulka.roll(150, heading, 1)
-        time.sleep(2)
+        self._kulka.roll(175, heading, 1)
+        time.sleep(1 + 0.5)
         return
 
     def stop(self):

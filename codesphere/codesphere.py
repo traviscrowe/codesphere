@@ -17,10 +17,7 @@ def main():
         sphero.change_ball_color(255, 0, 125)
 
         #   NAVIGATE THROUGH THE MAZE
-        sphero.roll(0, 3)
-
-
-
+        sphero.roll(0, 0.5)
 
 
 
